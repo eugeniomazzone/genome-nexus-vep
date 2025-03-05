@@ -1,7 +1,7 @@
 app:
   version: ""
 vep:
-  port: 0
+  port: 8080
   forks: 0
   host: ""
   username: ""

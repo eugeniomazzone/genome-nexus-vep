@@ -1,7 +1,7 @@
 app:
   version: "@project.version@"
 vep:
-  port: 3306
+  port: 8080
   forks: 4
   host:
   username:
