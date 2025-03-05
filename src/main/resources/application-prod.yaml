@@ -1,9 +1,9 @@
 app:
   version: "@project.version@"
 vep:
-  port: ${MYSQL_PORT}
+  port: 8080
   forks: 4
-  host: ${MYSQL_HOST}
+  host: 6000
   username: ${MYSQL_USER}
   password: ${MYSQL_PASSWORD}
   hgvs-max-threads: 75
