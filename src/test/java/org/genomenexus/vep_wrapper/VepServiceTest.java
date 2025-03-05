@@ -94,7 +94,7 @@ public class VepServiceTest {
     @Test
     void testAllVariantsAnnotated() throws Exception {
         ResponseEntity<List<Map<String, Object>>> annotatedVariants = restTemplate.exchange(
-            "http://localhost:" + port + "/vep/human/hgvs",
+            "http://localhost:" + port + "/vep/dog/hgvs",
             HttpMethod.POST,
             new HttpEntity<Map<String, List<String>>>(HGVS_PAYLOAD), 
             new ParameterizedTypeReference<List<Map<String, Object>>>() {}

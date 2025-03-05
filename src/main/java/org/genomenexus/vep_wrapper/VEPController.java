@@ -23,7 +23,7 @@ public class VEPController {
     @Autowired
     private VEPService vepService;
 
-    @GetMapping("/vep/human/hgvs/{variant}")
+    @GetMapping("/vep/dog/hgvs/{variant}")
     public ResponseEntity<String> annotateHGVS(@PathVariable String variant) {
         List<List<String>> variantChunks = new ArrayList<>();
         variantChunks.add(Arrays.asList(variant));
@@ -34,7 +34,7 @@ public class VEPController {
         }
     }
 
-    @PostMapping("/vep/human/hgvs")
+    @PostMapping("/vep/dog/hgvs")
     public ResponseEntity<String> annotateHGVS(@RequestBody Map<String, List<String>> variants) {
         List<String> variantList = variants.get("hgvs_notations");
         if (variantList == null) {
@@ -49,7 +49,7 @@ public class VEPController {
         }
     }
 
-    @GetMapping("/vep/human/region/{*variant}")
+    @GetMapping("/vep/dog/region/{*variant}")
     public ResponseEntity<String> annotateRegion(@PathVariable String variant) {
         List<List<String>> variantChunks = new ArrayList<>();       
         variantChunks.add(Arrays.asList(variant.substring(1)));
@@ -60,7 +60,7 @@ public class VEPController {
         }
     }
 
-    @PostMapping("/vep/human/region")
+    @PostMapping("/vep/dog/region")
     public ResponseEntity<String> annotateRegion(@RequestBody List<String> variants) {
         List<List<String>> variantChunks = vepService.getVariantChunksByChromosome(variants);
         try {
