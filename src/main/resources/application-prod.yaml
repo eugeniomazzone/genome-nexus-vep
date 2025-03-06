@@ -3,7 +3,7 @@ app:
 vep:
   port: 8080
   forks: 4
-  host: 8080
+  host: 6060
   username: ${MYSQL_USER}
   password: ${MYSQL_PASSWORD}
   hgvs-max-threads: 75
