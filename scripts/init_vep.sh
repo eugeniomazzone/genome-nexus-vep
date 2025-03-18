@@ -10,14 +10,17 @@ TAG=$1
 IMAGE_NAME="ensemblorg/ensembl-vep:$TAG"
 CONTAINER_NAME="vep-$TAG"
 
+echo $PWD
+
 # Start container in interactive mode with a persistent shell
-docker run -dt \
+docker run -dt --rm\
     --name $CONTAINER_NAME \
     --mount type=bind,src=$PWD/plugin-data,dst=/plugin-data \
+    --mount type=bind,src=$PWD/plugin-data,dst=/src/ensembl-vep/plugin-data \
     $IMAGE_NAME \
     /bin/bash
 
-docker cp $PWD/plugin-data/PolyPhen_SIFT.pm $CONTAINER_NAME:plugins/PolyPhen_SIFT.pm
+docker cp $PWD/plugin-data/PolyPhen_SIFT.pm $CONTAINER_NAME:plugin-data/PolyPhen_SIFT.pm
 
 # Create command passthrough script
 cat > ./scripts/vep << EOF

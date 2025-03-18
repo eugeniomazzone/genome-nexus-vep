@@ -3,9 +3,9 @@ app:
 vep:
   port: 8080
   forks: 4
-  host:
+  host: 8080
   username:
   password:
   hgvs-max-threads: 75
-  polyphen-sift-filename:
+  polyphen-sift-filename: "canis_lupus_familiaris_core_104_31.sql"
   alpha-missense-filename:

@@ -3,8 +3,8 @@
 Genome Nexus VEP is a small REST wrapper around the [Ensembl Variant Effect Predictor (VEP)]((https://useast.ensembl.org/info/docs/tools/vep/index.html)) command line interface. It exposes the following endpoints to interface with VEP:
 
 ```
-GET /vep/human/hgvs/{variant}
-POST /vep/human/hgvs
+GET /vep/dog/hgvs/{variant}
+POST /vep/dog/hgvs
 ```
 
 Each endpoint expects variant(s) to be in [HGVS format](https://hgvs-nomenclature.org/stable/background/simple/). See the implementation [here](/src/main/java/org/genomenexus/vep_wrapper/HGVSController.java).
